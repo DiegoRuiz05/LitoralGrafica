@@ -11,7 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam; //talvez deixar
 @Controller
 public class MeuController {
   @GetMapping("/")
-    public String home(){
-      return "SacolasPlasticas";
+  public String home() {
+    return "SacolasPlasticas";
   }
+
+
+  @GetMapping("/bocaVazadaFoscaOrcamento")
+  public ModelAndView bocaVazadaFoscaOrcamento() {
+    ModelAndView mv = new ModelAndView("bocaVazadaFoscaOrcamento");
+    return mv;
+  }
+
 }
+
