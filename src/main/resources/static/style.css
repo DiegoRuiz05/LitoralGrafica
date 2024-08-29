@@ -64,7 +64,6 @@ body {
     /*border: solid white;*/
 
 
-
 }
 
 .col-12 {
@@ -73,22 +72,23 @@ body {
 
 
 /* card: */
-.card{
+.card {
     width: 80%;
     margin: 9%;
 }
-.card-body{
+
+.card-body {
     display: flex;
     flex-direction: column;
-   align-items: center;
+    align-items: center;
     background-color: var(--cor-header1);
 }
 
-.imagem-card{
+.imagem-card {
     width: 50%;
 }
 
-.card-title{
+.card-title {
     font-family: var(--text-card);
     font-size: 2.20rem;
     color: #0069D9;
@@ -96,15 +96,12 @@ body {
 
 }
 
-.card-text{
+.card-text {
     font-size: 20px;
 }
 
-.btn-primary{
+.btn-primary {
 }
-
-
-
 
 
 footer {
@@ -179,22 +176,92 @@ footer {
 
 /*TABELA MASSA*/
 
-.tabela-max{
+
+.tabela-max1 {
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 5%;
     color: white;
+    border-collapse: collapse;
+    /*margin-bottom: 50px;*/
+    text-align: center;
 }
 
-.tabela-head1{
-    background-color: green;
-    border: solid   white;
+.tabela-max2{
+    margin-top: 2%;
+    width: 90%;
+    margin-left: 5%;
+    color: white;
+    border-collapse: collapse;
+    /*margin-bottom: 2%;*/
+    text-align: center;
 }
 
-.tabela-head2{
-    background-color: gray;
-    border: solid   white;
+.tabela-max3{
+    margin-top: 2%;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    color: white;
+    border-collapse: collapse;
+    /*margin-bottom: 50px;*/
+    text-align: center;
 }
 
-td{
-    border: solid   white;
+.empty {
+    color: var(--cor-fundo);
+    border: 10px solid var(--cor-fundo);
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-left: 2px solid var(--cor-fundo);
+    border-right: 2px solid var(--cor-fundo);
+}
+
+.tabela-subtitulo-cor {
+    border-top: 2px solid #ccc;
+}
+
+/*.tabela-max2{*/
+/*    width: 90%;*/
+/*    margin-left: 5%;*/
+/*    color: white;*/
+/*    border-collapse: collapse;*/
+/*    !*margin-bottom: 50px;*!*/
+/*    text-align: center;*/
+/*    margin-top: 30%;*/
+/*}*/
+
+/*.tabela-max3{*/
+/*    width: 30%;*/
+/*    margin-left: 24%;*/
+/*    color: white;*/
+/*    border-collapse: collapse;*/
+/*    margin-bottom: 50px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*#tabelas{*/
+/*    margin-left: 10%;*/
+/*}*/
+
+.tabela-titulo {
+    font-style: italic;
+    caption-side: top;
+    text-align: center;
+    font-size: 35px;
+}
+
+table th, table td {
+    border: 2px solid #ccc;
+}
+
+.lista-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+    font-family: "Oswald", sans-serif;
+    color: white;
 }
 
 
