@@ -20,11 +20,11 @@ public class MeuController extends FazOrcamentoPapel {
     return "SacolasPlasticas";
   }
 
-@GetMapping("/SacolasPlasticas")
- public ModelAndView sacolasPlasticas() {
+  @GetMapping("/SacolasPlasticas")
+  public ModelAndView sacolasPlasticas() {
     ModelAndView mv = new ModelAndView("SacolasPlasticas");
     return mv;
-}
+  }
 
   @GetMapping("/bocaVazadaFoscaOrcamento")
   public ModelAndView bocaVazadaFoscaOrcamento() {
@@ -33,9 +33,9 @@ public class MeuController extends FazOrcamentoPapel {
   }
 
   @GetMapping("/BocaVazadaBrilhoOrcamento")
-    public ModelAndView bocaVazadaBrilhoOrcamento() {
-      ModelAndView mv = new ModelAndView("bocaVazadaBrilhoOrcamento");
-      return mv;
+  public ModelAndView bocaVazadaBrilhoOrcamento() {
+    ModelAndView mv = new ModelAndView("bocaVazadaBrilhoOrcamento");
+    return mv;
   }
 
   @GetMapping("/AlcaCamisetaOrcamento")
@@ -50,61 +50,64 @@ public class MeuController extends FazOrcamentoPapel {
     return mv;
   }
 
+  //Orcamento
 
 
 
 
-//  @GetMapping("/SacolasPapelOrcamento")
-//  ModelAndView sacolasPapelOrcamento() {
-//    ModelAndView mv = new ModelAndView("SacolasPapelOrcamento");
-//    List<String> tamanhos = Arrays.asList("Pequena", "Média", "Grande", "Extra Grande");
-//    model.addAttribute("tamanhos", tamanhos);
-//    return tamanhos;
-//
-//  }
-
-
-//  @PostMapping("/SacolasPapelOrcamento")
-//  public ModelAndView sacolasPapelOrcamento(String pegarTamanhos) {
-//    ModelAndView mv = new ModelAndView("SacolasPapelOrcamento");
-//    FazOrcamentoPapel calcTamanho = new FazOrcamentoPapel();
-//    calcTamanho.qualTamanho(pegarTamanhos);
-//    System.out.println(pegarTamanhos);
-//    System.out.println(qualTamanho());
-//
-//    return mv;
-//  }
-
-//  @PostMapping("/SacolasPapelOrcamento")
-//  public ModelAndView form(String getTamanho){
-//    ModelAndView mv = new ModelAndView("index");
-//    FazOrcamentoPapel fp = new FazOrcamentoPapel();
-//    fp.qualTamanho(getTamanho);
-//    mv.addObject("fp", fp);
-//    mv.addObject("getTamanho", fp.qualTamanho(getTamanho));
-//    System.out.println(getTamanho);
-//    System.out.println(fp.qualTamanho(getTamanho));
-//    return mv;
-//  }
-
-  @GetMapping("/SacolasPapelOrcamento")
+  //MEUS TESTES QUE DERAM ERRADO
+  @GetMapping("/SacolasPapelOrcamento") //o link do http
   public ModelAndView sacolasPapelOrcamento() {
-    ModelAndView mv = new ModelAndView("SacolasPapelOrcamento");
-    mv.addObject("getTamanho", new FazOrcamentoPapel());
+    ModelAndView mv = new ModelAndView("SacolasPapelOrcamento"); //aqui mostra qual html ele vai pegar
+    mv.addObject("tamanhoSacolas", new FazOrcamentoPapel());
+    return mv;
+  }
+//
+//  @PostMapping("/efetuarOrcamento")
+//  public ModelAndView form(Integer tamanhoBase) {
+//    ModelAndView mv = new ModelAndView("SacolasPapelOrcamento");
+//    FazOrcamentoPapel fp = new FazOrcamentoPapel();
+//    fp.qualTamanho(tamanhoBase);
+//    mv.addObject("fp", fp);
+//    System.out.println(tamanhoBase);
+//    System.out.println(fp.qualTamanho(tamanhoBase));
+//    return "redirect:/SacolasPapelOrcamentoFinal";
+//  }
+//
+//  @GetMapping("/SacolasPapelOrcamentoFinal")
+//  public ModelAndView orcamentoFinal() {
+//    ModelAndView mv = new ModelAndView("SacolasPapelOrcamentoFinal");
+//    mv.addObject("tamanhoSacolas", new FazOrcamentoPapel());
+//    return mv;
+//  }
+
+
+  @PostMapping("/efetuarOrcamento")
+  public String efetuarOrcamento(FazOrcamentoPapel fp) {
+
+    return "redirect:/SacolasPapelOrcamentoFinal";
+  }
+
+  @GetMapping("/SacolasPapelOrcamentoFinal")
+  public ModelAndView orcamentoFinal() {
+    ModelAndView mv = new ModelAndView("SacolasPapelOrcamentoFinal");
+    FazOrcamentoPapel fp = new FazOrcamentoPapel();
+    mv.addObject("tamanhoSacolas", fp.qualTamanho(getTamanhoBase()));
     return mv;
   }
 
-  @PostMapping("/RespostaOrcamentoPapel")
-    public ModelAndView form(@ModelAttribute("getTamanho") FazOrcamentoPapel calcSacola){
-    ModelAndView mv = new ModelAndView("SacolasPapelOrcamento");
-    calcSacola.qualTamanho(calcSacola.getTamanhoSacola());
+//    @GetMapping("/SacolasPapelOrcamentoFinal")
+//  public ModelAndView form(Integer tamanhoBase) {
+//    ModelAndView mv = new ModelAndView("SacolasPapelOrcamentoFinal");
+//    FazOrcamentoPapel fp = new FazOrcamentoPapel();
+//    fp.qualTamanho(tamanhoBase);
+//    mv.addObject("fp", fp);
+//    System.out.println(tamanhoBase);
+//    System.out.println(fp.qualTamanho(tamanhoBase));
+//    return mv;
+//  }
 
-    mv.addObject("getTamanho",calcSacola.getTamanhoSacola());
-    System.out.println("valor selecionado" +calcSacola.getTamanhoSacola());
-    System.out.println("Tamanho calculado: " + calcSacola.qualTamanho(calcSacola.getTamanhoSacola()));
 
-    return mv;
-  }
 
 }
 

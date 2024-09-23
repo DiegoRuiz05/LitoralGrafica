@@ -24,7 +24,7 @@
                     <a href="/SacolasPlasticas">
                         <button type="button" class="btn btn-outline-warning">Sacolas Plásticas</button>
                     </a>
-                    <a href="SacolasPapel.html">
+                    <a href="SacolasPapelOrcamentoFinal.html">
                         <button type="button" class="btn btn-outline-warning">Sacolas de Papel</button>
                     </a>
                     <button type="button" class="btn btn-outline-warning">Contatos</button>
@@ -46,17 +46,35 @@
 
     <h2>Orçamento Sacola de Papel</h2>
 
-    <form action="/SacolasPapelOrcamento" method="POST" th:object="${getTamanho}">
-    <select class="form-select"  th:field="*{tamanhoSacola}" aria-label="Default select example">
-        <option value="" disabled selected>Open this select menu</option>
-        <option value="1">10X10X01</option>
-        <option value="2">20X20X02</option>
-        <option value="3">30X30X03</option>
-    </select>
-        <button type="submit">Enviar</button>
+    <form action="efetuarOrcamento" method="POST" th:object="${tamanhoSacolas}">
+        <label>Idade:</label>---
+        <input type="number" placeholder="Digite sua idade" name="idades" th:value="${tamanhoSacolas.tamanhoBase}">
+        <button type="submit" >Salvar</button>
     </form>
 
-    <p th:text="${getTamanho}"></p>
+
+
+    <!-- TESTES DO BAIANINHO ERRADOS
+    <form action="/efetuarOrcamento" method="POST" th:object="${tamanhoSacolas}">
+        <label>Tamanho da Sacola:</label>
+        <input type="text" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">
+        <button type="submit" >Enviar </button>
+    </form>
+    >-->
+
+
+
+<!--    <form action="/SacolasPapelOrcamento" method="post" th:object="${calcSacola}">-->
+<!--    <select class="form-select"  th:field="*{qualTamanho}" aria-label="Default select example">-->
+<!--        <option value="" disabled selected>Open this select menu</option>-->
+<!--        <option value="1">10X10X01</option>-->
+<!--        <option value="2">20X20X02</option>-->
+<!--        <option value="3">30X30X03</option>-->
+<!--    </select>-->
+<!--        <button type="submit">Enviar</button>-->
+<!--    </form>-->
+
+<!--    <p th:text="${getTamanho}"></p>-->
 
 <!--        <label>Tamanho da Sacola:</label>-->
 <!--        <select id="getTamanho" name="getTamanho">-->
