@@ -48,7 +48,7 @@
 
     <form action="efetuarOrcamento" method="POST" th:object="${tamanhoSacolas}">
         <label>Idade:</label>---
-        <input type="number" placeholder="Digite sua idade" name="idades" th:value="${tamanhoSacolas.tamanhoBase}">
+        <input type="number" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">
         <button type="submit" >Salvar</button>
     </form>
 

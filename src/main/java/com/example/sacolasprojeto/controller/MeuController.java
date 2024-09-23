@@ -55,14 +55,45 @@ public class MeuController extends FazOrcamentoPapel {
 
 
 
-  //MEUS TESTES QUE DERAM ERRADO
+  //MEUS TESTES
   @GetMapping("/SacolasPapelOrcamento") //o link do http
   public ModelAndView sacolasPapelOrcamento() {
     ModelAndView mv = new ModelAndView("SacolasPapelOrcamento"); //aqui mostra qual html ele vai pegar
     mv.addObject("tamanhoSacolas", new FazOrcamentoPapel());
+    FazOrcamentoPapel fp = new FazOrcamentoPapel();//
     return mv;
   }
-//
+
+  @PostMapping("/efetuarOrcamento")
+  //public String efetuarOrcamento(FazOrcamentoPapel fp) {
+  public String efetuarOrcamento(@ModelAttribute("tamanhoSacolas")FazOrcamentoPapel fp, Model model) {
+    String resultado = fp.qualTamanho(fp.getTamanhoBase());
+    model.addAttribute("resultadoOrcamento", resultado);
+    System.out.println(fp.getTamanhoBase());
+    return "SacolasPapelOrcamentoFinal";
+    //return "redirect:/SacolasPapelOrcamentoFinal";
+  }
+
+//  @GetMapping("/SacolasPapelOrcamentoFinal")
+//  public ModelAndView orcamentoFinal() {
+//    ModelAndView mv = new ModelAndView("SacolasPapelOrcamentoFinal");
+//    return mv;
+//  }
+
+  //tava erto
+//  @GetMapping("/SacolasPapelOrcamentoFinal")
+//  public ModelAndView orcamentoFinal() {
+//    ModelAndView mv = new ModelAndView("SacolasPapelOrcamentoFinal");
+//    FazOrcamentoPapel fp = new FazOrcamentoPapel();
+//    mv.addObject("tamanhoSacolas", fp.qualTamanho(getTamanhoBase()));
+//    System.out.println(fp.qualTamanho(getTamanhoBase()));
+//    return mv;
+//  }
+
+
+
+  //ignorar
+  //
 //  @PostMapping("/efetuarOrcamento")
 //  public ModelAndView form(Integer tamanhoBase) {
 //    ModelAndView mv = new ModelAndView("SacolasPapelOrcamento");
@@ -80,21 +111,6 @@ public class MeuController extends FazOrcamentoPapel {
 //    mv.addObject("tamanhoSacolas", new FazOrcamentoPapel());
 //    return mv;
 //  }
-
-
-  @PostMapping("/efetuarOrcamento")
-  public String efetuarOrcamento(FazOrcamentoPapel fp) {
-
-    return "redirect:/SacolasPapelOrcamentoFinal";
-  }
-
-  @GetMapping("/SacolasPapelOrcamentoFinal")
-  public ModelAndView orcamentoFinal() {
-    ModelAndView mv = new ModelAndView("SacolasPapelOrcamentoFinal");
-    FazOrcamentoPapel fp = new FazOrcamentoPapel();
-    mv.addObject("tamanhoSacolas", fp.qualTamanho(getTamanhoBase()));
-    return mv;
-  }
 
 //    @GetMapping("/SacolasPapelOrcamentoFinal")
 //  public ModelAndView form(Integer tamanhoBase) {

@@ -11,15 +11,15 @@ private String media;
 
 
 public String qualTamanho(Integer a){
-    tamanhoBase=a;
-    if(tamanhoBase==1){
+    a=tamanhoBase;
+    if(a==1){
         pequena="Sacola Pequena";
         return pequena;
-    }else if(tamanhoBase==2) {
+    }else if(a==2) {
         media = "Sacola Media";
         return media;
     }else {
-        return null;
+        return "tamanho desconhecido";
     }
 
 }
