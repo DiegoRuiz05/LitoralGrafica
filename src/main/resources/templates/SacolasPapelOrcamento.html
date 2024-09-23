@@ -46,7 +46,7 @@
 
     <h2>Orçamento Sacola de Papel</h2>
 
-    <form action="efetuarOrcamento" method="POST" th:object="${tamanhoSacolas}">
+    <form action="resultadoOrcamento" method="POST" th:object="${tamanhoSacolas}">
         <label>Idade:</label>---
         <input type="number" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">
         <button type="submit" >Salvar</button>
