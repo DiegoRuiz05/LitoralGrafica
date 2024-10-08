@@ -7,6 +7,7 @@ private Integer tamanhoBase=0;
 
 private String pequena;
 private String media;
+private String personalizacao;
 
 
 
@@ -24,28 +25,20 @@ public String qualTamanho(Integer a){
 
 }
 
-//    public Integer qualTamanho(Integer a){
-//        if (a==1){
-//             tamanhoSacolaJava = 10;
-//            return tamanhoSacolaJava;
-//        } else if (a == 2){
-//            tamanhoSacolaJava = 20;
-//            return tamanhoSacolaJava;
-//        } else if (a == 3){
-//            tamanhoSacolaJava = 30;
-//            return tamanhoSacolaJava;
-//        }else{
-//            return 0;
-//        }
-//    }
-
-
-
+//Getters e Setters
     public Integer getTamanhoBase() {
         return tamanhoBase;
     }
 
     public void setTamanhoBase(Integer tamanhoBase) {
         this.tamanhoBase = tamanhoBase;
+    }
+
+    public String getPersonalizacao() {
+        return personalizacao;
+    }
+
+    public void setPersonalizacao(String personalizacao) {
+        this.personalizacao = personalizacao;
     }
 }

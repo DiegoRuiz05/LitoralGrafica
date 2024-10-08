@@ -47,41 +47,31 @@
     <h2>Orçamento Sacola de Papel</h2>
 
     <form action="resultadoOrcamento" method="POST" th:object="${tamanhoSacolas}">
-        <label>Idade:</label>---
-        <input type="number" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">
-        <button type="submit" >Salvar</button>
+        <label>Escolha o Tamanho da Sacola:</label>
+        <select th:field="*{tamanhoBase}">
+            <option value="1">16X26</option>
+            <option value="2">23X34</option>
+        </select>
+        <br> <br>
+
+        <label>Qual o tipo de cor?</label><br>
+        <input type="radio" th:field="*{personalizacao}" th:value="basica" checked/>Impressão Básica<br>
+        <input type="radio" th:field="*{personalizacao}" th:value="pantone"/> Impressão Pantone<br>
+        <input type="radio" th:field="*{personalizacao}" th:value="colorida"/> Impressão Colorida<br>
+        <br><br>
+        <button type="submit">Salvar</button>
     </form>
 
 
 
-    <!-- TESTES DO BAIANINHO ERRADOS
-    <form action="/efetuarOrcamento" method="POST" th:object="${tamanhoSacolas}">
-        <label>Tamanho da Sacola:</label>
-        <input type="text" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">
-        <button type="submit" >Enviar </button>
-    </form>
-    >-->
-
-
-
-<!--    <form action="/SacolasPapelOrcamento" method="post" th:object="${calcSacola}">-->
-<!--    <select class="form-select"  th:field="*{qualTamanho}" aria-label="Default select example">-->
-<!--        <option value="" disabled selected>Open this select menu</option>-->
-<!--        <option value="1">10X10X01</option>-->
-<!--        <option value="2">20X20X02</option>-->
-<!--        <option value="3">30X30X03</option>-->
-<!--    </select>-->
-<!--        <button type="submit">Enviar</button>-->
+<!--   TESTE SEM DROP LIST QUE DEU CERTO -->
+<!--    <form action="resultadoOrcamento" method="POST" th:object="${tamanhoSacolas}">-->
+<!--        <label>Tamanho da Sacola</label>-&#45;&#45;-->
+<!--        <input type="number" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">-->
+<!--        <button type="submit" >Salvar</button>-->
 <!--    </form>-->
 
-<!--    <p th:text="${getTamanho}"></p>-->
 
-<!--        <label>Tamanho da Sacola:</label>-->
-<!--        <select id="getTamanho" name="getTamanho">-->
-<!--            <option th:value="${getTamanho}">Tamanho</option>-->
-<!--&lt;!&ndash;            th:each="getTamanho: ${getTamanho}"th:value="${getTamanho}"&ndash;&gt;-->
-<!--            -->
-<!--        </select>-->
 
 
 

@@ -59,23 +59,30 @@ public class MeuController extends FazOrcamentoPapel {
   @GetMapping("/SacolasPapelOrcamento") //o link do http
   public ModelAndView sacolasPapelOrcamento() {
     ModelAndView mv = new ModelAndView("SacolasPapelOrcamento"); //aqui mostra qual html ele vai pegar
-    mv.addObject("tamanhoSacolas", new FazOrcamentoPapel());
     FazOrcamentoPapel fp = new FazOrcamentoPapel();//
+    fp.setPersonalizacao("basica");
+    mv.addObject("tamanhoSacolas", fp);
     return mv;
   }
 
   @PostMapping("/resultadoOrcamento")
-
   public String resultadoOrcamento(@ModelAttribute("tamanhoSacolas")FazOrcamentoPapel fp, Model model) {
     String resultado = fp.qualTamanho(fp.getTamanhoBase());
+
+
+
+    if (fp.getPersonalizacao() != null && !fp.getPersonalizacao().isEmpty()){
+      resultado += " com a personalização: " + fp.getPersonalizacao();
+    }
     model.addAttribute("resultadoOrcamento", resultado);
     System.out.println(fp.getTamanhoBase());
     return "SacolasPapelOrcamentoFinal";
     //return "redirect:/SacolasPapelOrcamentoFinal";
   }
 
-
-
-
+  @GetMapping("/SacolasPapelOrcamentoFinal")
+  public ModelAndView orcamentoFinal() {
+    return new ModelAndView("SacolasPapelOrcamentoFinal");
+  }
 }
 
