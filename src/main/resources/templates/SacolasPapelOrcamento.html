@@ -43,42 +43,63 @@
         </div>
     </div>
 
+    <section class="formulario">
+        <h2 class="formulario-titulo">Orçamento Sacola de Papel</h2>
 
-    <h2>Orçamento Sacola de Papel</h2>
+        <form action="resultadoOrcamento" method="POST" th:object="${tamanhoSacolas}">
+            <label class="formulario-titulo">Escolha o Tamanho da Sacola:</label>
+            <select th:field="*{tamanhoBase}">
+                <option value="1">16X26</option>
+                <option value="2">23X34</option>
+            </select>
+            <br> <br>
 
-    <form action="resultadoOrcamento" method="POST" th:object="${tamanhoSacolas}">
-        <label>Escolha o Tamanho da Sacola:</label>
-        <select th:field="*{tamanhoBase}">
-            <option value="1">16X26</option>
-            <option value="2">23X34</option>
-        </select>
-        <br> <br>
+            <label class="formulario-titulo">Qual o tipo de cor de fundo?</label><br>
+            <div class="formulario-caixa">
+                <input type="radio" th:field="*{personalizacao}" th:value="basica" checked/> Impressão Básica(Preto,
+                Margenta(pink), Rosa Bebê, Amarelo, Azul Claro(ciano)<br>
+                <input type="radio" th:field="*{personalizacao}" th:value="pantone"/> Impressão Pantone(Cores Especiais)<br>
+                <input type="radio" th:field="*{personalizacao}" th:value="colorida"/> Impressão
+                Colorida(Fotográfica)<br>
+            </div>
 
-        <label>Qual o tipo de cor?</label><br>
-        <input type="radio" th:field="*{personalizacao}" th:value="basica" checked/>Impressão Básica<br>
-        <input type="radio" th:field="*{personalizacao}" th:value="pantone"/> Impressão Pantone<br>
-        <input type="radio" th:field="*{personalizacao}" th:value="colorida"/> Impressão Colorida<br>
-        <br><br>
-        <button type="submit">Salvar</button>
-    </form>
+            <h4>Personalizações Adicionais:</h4>
+            <br>
 
+            <label>Plastificação:</label> <br>
+            <input type="radio" th:field="*{plastificacao}" th:value="nao" checked/> Não<br>
+            <input type="radio" th:field="*{plastificacao}" th:value="sim"/> Sim<br>
 
-
-<!--   TESTE SEM DROP LIST QUE DEU CERTO -->
-<!--    <form action="resultadoOrcamento" method="POST" th:object="${tamanhoSacolas}">-->
-<!--        <label>Tamanho da Sacola</label>-&#45;&#45;-->
-<!--        <input type="number" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">-->
-<!--        <button type="submit" >Salvar</button>-->
-<!--    </form>-->
-
-
-
-
+            <!--colocar espaço-->
+            <br> <br>
 
 
-    </main>
+            <label>Ilhós:</label> <br>
+            <input type="radio" th:field="*{ilhos}" th:value="nao" checked/> Não <br>
+            <input type="radio" th:field="*{ilhos}" th:value="sim"/> Sim <br>
+
+            <!--colocar espaço-->
+            <br> <br>
+            <label>Cordões:</label> <br>
+            <input type="radio" th:field="*{cordoes}" th:value="basico" checked/> Básico <br>
+            <input type="radio" th:field="*{cordoes}" th:value="gorgurao"/> Gorgurão <br>
 
 
+                <button type="submit" class="btn btn-outline-warning btn-back formulario-botao">Próximo</button>
+
+        </form>
+    </section>
+
+
+    <!--   TESTE SEM DROP LIST QUE DEU CERTO -->
+    <!--    <form action="resultadoOrcamento" method="POST" th:object="${tamanhoSacolas}">-->
+    <!--        <label>Tamanho da Sacola</label>-&#45;&#45;-->
+    <!--        <input type="number" placeholder="Digite o tamanho da sacola" name="tamanhoBase" th:value="${tamanhoSacolas.tamanhoBase}">-->
+    <!--        <button type="submit" >Salvar</button>-->
+    <!--    </form>-->
+
+
+</main>
 
 
 <footer>

@@ -61,6 +61,9 @@ public class MeuController extends FazOrcamentoPapel {
     ModelAndView mv = new ModelAndView("SacolasPapelOrcamento"); //aqui mostra qual html ele vai pegar
     FazOrcamentoPapel fp = new FazOrcamentoPapel();//
     fp.setPersonalizacao("basica");
+    fp.setPlastificacao("nao");
+    fp.setIlhos("nao");
+    fp.setCordoes("basico");
     mv.addObject("tamanhoSacolas", fp);
     return mv;
   }
@@ -70,10 +73,30 @@ public class MeuController extends FazOrcamentoPapel {
     String resultado = fp.qualTamanho(fp.getTamanhoBase());
 
 
+//    if (fp.getPersonalizacao().equals("basica")) {
+//
+//    } else if (fp.getPersonalizacao().equals("pantone")) {
+//
+//    } else if (fp.getPersonalizacao().equals("colorida")) {
+
+    //}
+
 
     if (fp.getPersonalizacao() != null && !fp.getPersonalizacao().isEmpty()){
       resultado += " com a personalização: " + fp.getPersonalizacao();
     }
+
+    if(fp.getPlastificacao() != null && !fp.getPlastificacao().isEmpty()){
+    resultado += "\n Plastificação: " +fp.getPlastificacao();
+    }
+
+    if (fp.getIlhos() != null && !fp.getIlhos().isEmpty()){
+      resultado += "\n Ilhos: " + fp.getIlhos();
+    }
+    if (fp.getCordoes() != null && !fp.getCordoes().isEmpty()){
+      resultado += "\n Cordões: " + fp.getCordoes();
+    }
+
     model.addAttribute("resultadoOrcamento", resultado);
     System.out.println(fp.getTamanhoBase());
     return "SacolasPapelOrcamentoFinal";
