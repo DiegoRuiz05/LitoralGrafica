@@ -70,7 +70,7 @@ public class MeuController extends FazOrcamentoPapel {
 
   @PostMapping("/resultadoOrcamento")
   public String resultadoOrcamento(@ModelAttribute("tamanhoSacolas")FazOrcamentoPapel fp, Model model) {
-    String resultado = fp.qualTamanho(fp.getTamanhoBase());
+    String resultado = fp.qualTamanho(fp.getTamanhoBase(),fp.getPersonalizacao(), getPlastificacao(), getIlhos(), getCordoes());
 
 
 //    if (fp.getPersonalizacao().equals("basica")) {
@@ -98,7 +98,8 @@ public class MeuController extends FazOrcamentoPapel {
     }
 
     model.addAttribute("resultadoOrcamento", resultado);
-    System.out.println(fp.getTamanhoBase());
+    System.out.println("Tamanho "+fp.getTamanhoBase()+"\n Impresao "+fp.getPersonalizacao()+"\n Plastificação "+fp.getPlastificacao()+"\n ilhos "+fp.getIlhos()+"\n cordoes "+fp.getCordoes());
+
     return "SacolasPapelOrcamentoFinal";
     //return "redirect:/SacolasPapelOrcamentoFinal";
   }
