@@ -8,6 +8,7 @@
 }
 
 :root {
+    /*--cor-fundo: rgb(255, 255, 255);*/
     --cor-fundo: rgb(26, 28, 32);
     --cor-header1: rgb(245, 185, 0);
     --cor-header2: rgba(221, 141, 11, 0.91);
@@ -30,6 +31,7 @@ body {
 }
 
 .cabecalho {
+    /*background-color: lightslategray;*/
     background-color: black;
 }
 
@@ -92,7 +94,7 @@ body {
 .card-title {
     font-family: var(--text-card);
     font-size: 2.20rem;
-    color: #0069D9;
+    color: #000000;
     padding-top: 5%;
 
 }
@@ -290,12 +292,26 @@ table th, table td {
 .formulario{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     background-color: white;
     width: 40%;
-    margin-left: 25%;
+    margin-top: 2%;
+margin-left: 30%;
     border-radius: 2%;
     text-align: center;
+    box-shadow: 10px 10px 10px black;
+}
+
+.formulario-titulo1 {
+    padding-bottom: 5%;
+}
+
+.formulario-titulo4 {
+    padding-top: 8%;
+}
+
+.formulario-caixa {
+    padding: 3%;
 }
 
 .formulario-caixa {
@@ -304,8 +320,75 @@ table th, table td {
 }
 
 .formulario-botao {
-    margin-top: 3%;
+    margin-top: 7%;
     margin-bottom: 5%;
+}
+
+@media screen and (max-width: 850px) {
+    .formulario {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .formulario {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .formulario {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+/* ORÇAMENTO FINAL */
+
+.orcamento-final {
+    color: white;
+    flex-direction: column;
+
+}
+
+.orcamento-uni {
+    width: 30%;
+    margin: auto;
+    border-bottom: solid 1px white;
+    padding: 10px;
+    text-align: center;
+}
+
+.orcamento-quinhentos {
+    width: 30%;
+    margin: auto;
+    border-bottom: solid 1px white;
+    padding: 10px;
+    text-align: center;
+}
+
+.orcamento-mil {
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.orcamento-p {
+    font-size: 20px;
+}
+
+.carousel-inner {
+    margin-left: 30%;
+    width: 40%;
+}
+
+@media screen and (max-width: 575px) {
+    .orcamento-titulo {
+        font-size: 2rem;
+    }
 }
 
 
