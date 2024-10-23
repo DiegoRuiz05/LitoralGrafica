@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 @font-face {
     font-family: "Ringtail";
@@ -209,6 +210,10 @@ footer {
     text-align: center;
 }
 
+.tabela-tamanho {
+    background-color: red;
+}
+
 .tabela-max2{
     margin-top: 2%;
     width: 90%;
@@ -348,48 +353,52 @@ margin-left: 30%;
 /* ORÇAMENTO FINAL */
 
 .orcamento-final {
-    color: white;
-    flex-direction: column;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5%;
 }
 
-.orcamento-uni {
-    width: 30%;
-    margin: auto;
-    border-bottom: solid 1px white;
-    padding: 10px;
+.valor-1000-unidades {
+    background-color: white;
+    border: solid 4px black;
     text-align: center;
-}
-
-.orcamento-quinhentos {
-    width: 30%;
-    margin: auto;
-    border-bottom: solid 1px white;
     padding: 10px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 6px 5px black;
 }
 
-.orcamento-mil {
-    width: 30%;
-    margin: auto;
+.valor-500-unidades {
+    background-color: white;
+    border: solid 4px black;
+    text-align: center;
     padding: 10px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 6px 5px black;
 }
 
-.orcamento-p {
-    font-size: 20px;
+.orcamento-final-titulo {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+
 }
 
-.carousel-inner {
-    margin-left: 30%;
-    width: 40%;
+.valor-real {
+    font-size: 1.7rem;
 }
 
 @media screen and (max-width: 575px) {
-    .orcamento-titulo {
-        font-size: 2rem;
+    .orcamento-final{
+    display: flex;
+    flex-direction: column;
+        margin: 5%;
+    }
+
+    .valor-1000-unidades {
+        margin-bottom: 5%;
     }
 }
+
 
 
 

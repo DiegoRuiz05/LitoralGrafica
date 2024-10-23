@@ -4,11 +4,6 @@ import java.text.DecimalFormat;
 
 public class FazOrcamentoPapel {
 
-
-
-private String pequena;
-private String media;
-
 private float tamanhoBase=0;
 private float precoTamanhoBase=0;
 
@@ -30,8 +25,7 @@ private String respString="";
 private float respFloat500;
 private String respString500="";
 
-
-
+private float porcentagemAcrescida;
 
 
 //16X26 =1
@@ -49,111 +43,126 @@ public String qualTamanho(float a, String persona, String plast, String ilhos, S
     a = tamanhoBase;
 
     if(a==0){
-        precoTamanhoBase = 770;
+        //precoTamanhoBase = 770;
+        precoTamanhoBase = 790;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao + precoIlhos + precoCordoes;
-        respFloat -=100;
+
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
+        //respFloat -=100;
         respString = String.valueOf(respFloat);
         return respString;
 
 
 
     }  else if(a==1 || a==0.5){
-        precoTamanhoBase = 770;
+        //precoTamanhoBase = 770;
+        precoTamanhoBase = 890;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao + precoIlhos + precoCordoes;
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
         respString = String.valueOf(respFloat);
         return respString;
 
     } else if (a==2) {
-        precoTamanhoBase = 770;
+        //precoTamanhoBase = 770;
+        //precoTamanhoBase = 890;
+        precoTamanhoBase = 1010;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao + precoIlhos + precoCordoes;
-        respFloat += 120;
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
+        //respFloat += 120;
         respString = String.valueOf(respFloat);
         return respString;
 
     } else if (a==3) {
-        precoTamanhoBase = 770;
+       // precoTamanhoBase = 770;
+       // precoTamanhoBase = 890;
+        precoTamanhoBase = 1040;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao + precoIlhos + precoCordoes;
-        respFloat += 150;
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
+        //respFloat += 150;
         respString = String.valueOf(respFloat);
         return respString;
     } else if (a==4) {
-        precoTamanhoBase = 770;
+        //precoTamanhoBase = 770;
+        //precoTamanhoBase = 890;
+        precoTamanhoBase = 1070;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao + precoIlhos + precoCordoes;
-        respFloat += 180;
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
+        //respFloat += 180;
         respString = String.valueOf(respFloat);
         return respString;
 
     } else if(a==5 || a==6) {
-        precoTamanhoBase = 1150;
+        //precoTamanhoBase = 1150;
+        precoTamanhoBase = 1270;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao+ precoIlhos+ precoCordoes; //arrumar os cordoes
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
         respString = String.valueOf(respFloat);
         return respString;
 
     } else if (a==7) {
-        precoTamanhoBase = 1150;
+        //precoTamanhoBase = 1150;
+        //precoTamanhoBase = 1270;
+        precoTamanhoBase = 1170;
+
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao+ precoIlhos+ precoCordoes;
-        respFloat -= 100;
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
+        //respFloat -= 100;
         respString = String.valueOf(respFloat);
         return respString;
 
     } else if (a==8) {
-        precoTamanhoBase = 1650;
+        //precoTamanhoBase = 1650;
+        precoTamanhoBase = 1780;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao+ precoIlhos+ precoCordoes;
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
         respString = String.valueOf(respFloat);
 
         return respString;
     } else if (a==9 || a==10) {
-        precoTamanhoBase = 1815;
+        //precoTamanhoBase = 1815;
+        precoTamanhoBase = 1945;
         calculaCor(a);
         calculaIlhos(a);
         calculaPlastificacao(a);
         calculaCordao(a);
 
-        respFloat = precoTamanhoBase + precoPersonalizacao + precoPlastificacao+ precoIlhos+ precoCordoes;
+        respFloat = valorDeVenda(precoTamanhoBase, precoPersonalizacao) + precoPlastificacao + precoIlhos + precoCordoes;
         respString = String.valueOf(respFloat);
 
         return respString;
     } else {
-        return media;
+        return "";
     }
 }
 
@@ -227,13 +236,13 @@ public float calculaPlastificacao(float a){
     public float calculaCordao(float a){
     if (a==0 || a==0.5 || a==1 || a==2 || a==3 || a==4 || a==5 || a==6 || a==7) {
         if (getCordoes().equals("basico")) {
-            return precoCordoes = 120;
+            return precoCordoes = 0;
         } else if (getCordoes().equals("gorgurao")) {
             return precoCordoes = 420;
         }
     } else if (a==8 || a==9 || a==10) {
         if (getCordoes().equals("basico")) {
-            return precoCordoes = 130;
+            return precoCordoes = 0;
         } else if (getCordoes().equals("gorgurao")) {
             return precoCordoes = 430;
         }
@@ -293,10 +302,53 @@ public float calculaPlastificacao(float a){
         return respString500Uni;
     }
 
-    //
-//    public float valorDeVenda(){
-//
-//    }
+
+    public float valorDeVenda(float valorBase, float valorCor){
+        float somaItensBasicos=0;
+        verificaQualImpressao(tamanhoBase);
+        //System.out.println("valor porcentagem "+verificaQualImpressao(tamanhoBase));
+        somaItensBasicos = valorBase+valorCor;
+        //System.out.println("valor que sofrerá o aumento "+somaItensBasicos);
+        float valorComLucroResp = (somaItensBasicos*porcentagemAcrescida)/100;
+       // System.out.println("valor com aumento "+valorComLucroResp);
+        return valorComLucroResp;
+    }
+
+    public float verificaQualImpressao(float a) {
+        if(a==0|| a==0.5 || a==1 || a==2 || a==3 || a==4) {
+            if (getPersonalizacao().equals("basica")) {
+                return porcentagemAcrescida=180;
+            } else if (getPersonalizacao().equals("pantone")) {
+                return porcentagemAcrescida=175;
+            } else if (getPersonalizacao().equals("colorida")) {
+                return porcentagemAcrescida=170;
+            }
+
+        } else if (a==5 || a==6 || a==7) {
+            if (getPersonalizacao().equals("basica")) {
+                return porcentagemAcrescida = 175;
+            } else if (getPersonalizacao().equals("pantone")) {
+                return porcentagemAcrescida = 172;
+            } else if (getPersonalizacao().equals("colorida")) {
+                return porcentagemAcrescida = 165;
+            }
+
+        } else if (a==8 || a==9 || a==10) {
+            if (getPersonalizacao().equals("basica")) {
+                return porcentagemAcrescida = 170;
+            } else if (getPersonalizacao().equals("pantone")) {
+                return porcentagemAcrescida = 168;
+            } else if (getPersonalizacao().equals("colorida")) {
+                return porcentagemAcrescida = 165;
+            }
+
+        }
+
+        return 0;
+    }
+
+
+
 
 //Getters e Setters
     public float getTamanhoBase() {
