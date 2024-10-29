@@ -1,5 +1,8 @@
-# Usando uma imagem do Maven com OpenJDK 22
-FROM maven:3.8.6-openjdk-22 AS builder
+# Usando uma imagem base do OpenJDK 22
+FROM openjdk:22-jdk-slim AS builder
+
+# Instalando o Maven
+RUN apt-get update && apt-get install -y maven && apt-get clean
 
 # Definindo o diretório de trabalho
 WORKDIR /app
@@ -14,7 +17,10 @@ RUN mvn clean package
 # Usando uma imagem leve do OpenJDK 22 para executar o aplicativo
 FROM openjdk:22-jdk-slim
 
-# Copiando o arquivo JAR gerado
+# Definindo o diretório de trabalho para o runtime
+WORKDIR /app
+
+# Copiando o arquivo JAR gerado da fase de build
 COPY --from=builder /app/target/*.jar app.jar
 
 # Comando para executar o aplicativo
