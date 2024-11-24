@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 @font-face {
     font-family: "Ringtail";
     src: url("Ringtail-Sans Serif.otf") format("opentype");
@@ -57,7 +61,9 @@ body {
 
 
 .ancora {
-    font-family: "Ringtail", Times, serif;
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: normal;
     color: var(--cor-header2);
     font-size: 1.25rem;
     padding-top: 10%;
@@ -72,6 +78,23 @@ body {
 
 .col-12 {
     width: 50%;
+}
+
+.input-group-append{
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+.link-insta{
+    text-decoration: underline;
+    color: black;
+    font-style: normal;
+
+}
+.link-insta:hover{
+
+    text-decoration: underline;
+    color: gray;
 }
 
 

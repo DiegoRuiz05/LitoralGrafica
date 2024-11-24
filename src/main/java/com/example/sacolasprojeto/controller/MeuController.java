@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model; //talvez deixar
-import org.springframework.web.bind.annotation.RequestParam; //talvez deixar
 
-import java.util.Arrays;
-import java.util.List;
 
 @Controller
 public class MeuController extends FazOrcamentoPapel {
@@ -28,13 +25,13 @@ public class MeuController extends FazOrcamentoPapel {
 
   @GetMapping("/bocaVazadaFoscaOrcamento")
   public ModelAndView bocaVazadaFoscaOrcamento() {
-    ModelAndView mv = new ModelAndView("bocaVazadaFoscaOrcamento");
+    ModelAndView mv = new ModelAndView("BocaVazadaFoscaOrcamento");
     return mv;
   }
 
   @GetMapping("/BocaVazadaBrilhoOrcamento")
   public ModelAndView bocaVazadaBrilhoOrcamento() {
-    ModelAndView mv = new ModelAndView("bocaVazadaBrilhoOrcamento");
+    ModelAndView mv = new ModelAndView("BocaVazadaBrilhoOrcamento");
     return mv;
   }
 
@@ -76,22 +73,6 @@ public class MeuController extends FazOrcamentoPapel {
     String resultado500 = "R$"+fp.calculaPreco500(fp.getTamanhoBase());
     String resultado500uni = "R$"+fp.calculaUnitarioPreco500(fp.getTamanhoBase());
 
-//    if (fp.getPersonalizacao() != null && !fp.getPersonalizacao().isEmpty()){
-//      resultado += " com a personalização: " + fp.getPersonalizacao();
-//    }
-//
-//    if(fp.getPlastificacao() != null && !fp.getPlastificacao().isEmpty()){
-//    resultado += "\n Plastificação: " +fp.getPlastificacao();
-//    }
-//
-//    if (fp.getIlhos() != null && !fp.getIlhos().isEmpty()){
-//      resultado += "\n Ilhos: " + fp.getIlhos();
-//    }
-//    if (fp.getCordoes() != null && !fp.getCordoes().isEmpty()){
-//      resultado += "\n Cordões: " + fp.getCordoes();
-//    }
-
-    //resultado+="\n Valor unitário R$:"+fp.calculaUnitario();
 
     model.addAttribute("resultadoOrcamento", resultado);
     model.addAttribute("resultadoUni", resultadoUni);
@@ -102,7 +83,7 @@ public class MeuController extends FazOrcamentoPapel {
     System.out.println("Tamanho "+fp.getTamanhoBase()+"\n Impresao "+fp.getPersonalizacao()+"\n Plastificação "+fp.getPlastificacao()+"\n ilhos "+fp.getIlhos()+"\n cordoes "+fp.getCordoes()+ "\n valor unitario: R$"+fp.calculaUnitario());
 
     return "SacolasPapelOrcamentoFinal";
-    //return "redirect:/SacolasPapelOrcamentoFinal";
+
   }
 
   @GetMapping("/SacolasPapelOrcamentoFinal")
